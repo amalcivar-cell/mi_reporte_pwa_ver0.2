@@ -1,0 +1,25 @@
+{
+  "name": "Reporte Multimedia GPS",
+  "short_name": "El Informador",
+  "description": "Captura fotos y videos auditados con coordenadas GPS en tiempo real.",
+  "start_url": "index.html",
+  "scope": "/mi_reporte_pwa/",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#25D366",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

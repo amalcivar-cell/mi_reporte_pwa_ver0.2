@@ -1,0 +1,207 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================================================== */
+:root {
+  /* Paleta de colores basada en tu PWA */
+  --bg-main: #f0f2f5;
+  --bg-card: #ffffff;
+  --bg-input: #f9f9f9;
+  
+  --color-primary: #25D366;  /* Verde PWA */
+  --color-photo: #007bff;    /* Azul */
+  --color-video: #dc3545;    /* Rojo */
+  --color-file: #6c757d;     /* Gris */
+  --color-success: #28a745;  /* Verde éxito */
+  
+  --text-dark: #333333;
+  --text-muted: #666666;
+  --text-light: #777777;
+  --border-color: #cccccc;
+  
+  /* Fuentes */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-gothic: 'UnifrakturMaguntia', serif;
+}
+
+/* Aplicar box-sizing universal para evitar desbordamientos de padding */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-main);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh; /* Asegura centrado vertical en cualquier pantalla */
+}
+
+/* ==========================================================================
+   2. CONTENEDOR PRINCIPAL Y CONTENIDO
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-gotico {
+  font-family: var(--font-gothic);
+  font-size: 42px;
+  text-align: center;
+  color: #000000;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+h2 {
+  text-align: center;
+  color: #555555;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 10px;
+}
+
+.meta-info {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   3. FORMULARIOS
+   ========================================================================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-input);
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary); /* Brillo verde al enfocar */
+}
+
+#input-titular {
+  text-transform: uppercase;
+}
+
+.form-group textarea {
+  resize: none;
+  height: 120px;
+}
+
+.char-counter {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   4. BOTONES Y ACCIONES (UX MÓVIL)
+   ========================================================================== */
+.buttons-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-capture-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.btn-capture-wrapper input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.btn-ui {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  padding: 14px 0;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+/* Feedback táctil para móviles */
+.btn-ui:active {
+  transform: scale(0.98);
+}
+
+.btn-photo { background-color: var(--color-photo); }
+.btn-video { background-color: var(--color-video); }
+.btn-file  { background-color: var(--color-file); }
+
+#btn-share {
+  background-color: var(--color-primary);
+  margin-top: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   5. ESTADOS DE ARCHIVOS
+   ========================================================================== */
+#file-status {
+  font-size: 14px;
+  color: var(--color-video);
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.file-loaded {
+  color: var(--color-success) !important;
+}

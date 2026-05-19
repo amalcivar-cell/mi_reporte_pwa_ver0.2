@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Informador - Reporte Multimedia</title>
+  
+  <!-- CORRECCIÓN: Rutas relativas para asegurar la comunicación en local y producción -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- CORRECCIÓN: URLs completas y corregidas para Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+  <!-- Meta etiquetas para iOS / Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CamGPS">
+  <link rel="apple-touch-icon" href="icon-512x512.png">
+</head>
+<body>
+  <main class="container">
+    <h1 class="header-gotico">El Informador</h1>
+    <h2>Reporte Multimedia</h2>
+    
+    <div id="clock-status" class="meta-info">Cargando fecha y hora...</div>
+    <div id="gps-status" class="meta-info">Solicitando localización GPS...</div>
+
+    <!-- 1. Categoría -->
+    <div class="form-group">
+      <label for="select-categoria">Categoría:</label>
+      <select id="select-categoria">
+        <option value="" disabled selected>-- Seleccione una opción --</option>
+        <option value="Noticias">Noticias</option>
+        <option value="Deportes">Deportes</option>
+        <option value="Comunidad">Comunidad</option>
+       
+      </select>
+    </div>
+
+    <!-- 2. Ciudad -->
+    <div class="form-group">
+      <label for="select-ciudad">Ciudad:</label>
+      <select id="select-ciudad">
+        <option value="" disabled selected>-- Seleccione una ciudad --</option>
+        <option value="Guayaquil">Guayaquil</option>
+        <option value="Ambato">Ambato</option>
+        <option value="Cuenca">Cuenca</option>
+        <option value="Daule">Daule</option>
+        <option value="Durán">Durán</option>
+        <option value="La Aurora">La Aurora</option>
+        <option value="Machala">Machala</option>
+        <option value="Manta">Manta</option>
+        <option value="Milagro">Milagro</option>
+        <option value="Pascuales">Pascuales</option>
+        <option value="Quito">Quito</option>
+        <option value="Salinas">Salinas</option>
+        <option value="Samborondón">Samborondón</option>
+      </select>
+    </div>
+
+    <!-- 3. Campo Titular -->
+    <div class="form-group">
+      <label for="input-titular">Titular (Solo Mayúsculas)</label>
+      <input type="text" id="input-titular" maxlength="60" placeholder="ESCRIBE EL TITULAR AQUÍ...">
+      <div class="char-counter" id="counter-titular">0 / 60 caracteres</div>
+    </div>
+
+    <!-- 4. Campo Redacción -->
+    <div class="form-group">
+      <label for="input-redaccion">Redacción</label>
+      <textarea id="input-redaccion" maxlength="500" placeholder="Escribe la redacción aquí..."></textarea>
+      <div class="char-counter" id="counter-redaccion">0 / 500 caracteres</div>
+    </div>
+
+    <!-- Fila de Botones Alineados -->
+    <div class="buttons-row">
+      <div class="btn-capture-wrapper">
+        <button class="btn-ui btn-photo" type="button">FOTO</button>
+        <input type="file" id="capture-image" accept="image/*" capture="environment">
+      </div>
+      <div class="btn-capture-wrapper">
+        <button class="btn-ui btn-video" type="button">VIDEO</button>
+        <input type="file" id="capture-video" accept="video/*" capture="environment">
+      </div>
+      <div class="btn-capture-wrapper">
+        <button class="btn-ui btn-file" type="button">ARCHIVO</button>
+        <input type="file" id="capture-file" accept="image/*,video/*">
+      </div>
+    </div>
+
+    <!-- CORRECCIÓN: Emoji corrupto limpiado a formato nativo string -->
+    <div id="file-status">⚠️ No se ha capturado archivo multimedia</div>
+    <button id="btn-share" class="btn-ui">Enviar por WhatsApp</button>
+  </main>
+
+  <!-- CORRECCIÓN: Script enlazado de forma relativa para inicializar la lógica DOM -->
+  <script src="script.js"></script>
+</body>
+</html>
