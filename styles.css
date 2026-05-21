@@ -56,10 +56,11 @@ body {
 .logo-title {
     font-family: "Georgia Pro", "Georgia", "Century Schoolbook", serif;
     font-size: 42px;
+    text-align: center;
     font-weight: 400; /* Regular, no es negrita nativa */
     color: #000000;
     letter-spacing: -0.5px; /* Ligero ajuste de tracking de estilo diario */
-    line-height: 1.1;
+    line-height: 1;
 }
 
 /* Subtítulo: .COM */
