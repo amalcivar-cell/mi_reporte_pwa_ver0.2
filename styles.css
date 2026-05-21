@@ -52,6 +52,27 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Texto principal: El Informador */
+.logo-title {
+    font-family: "Georgia Pro", "Georgia", "Century Schoolbook", serif;
+    font-size: 42px;
+    font-weight: 400; /* Regular, no es negrita nativa */
+    color: #000000;
+    letter-spacing: -0.5px; /* Ligero ajuste de tracking de estilo diario */
+    line-height: 1.1;
+}
+
+/* Subtítulo: .COM */
+.logo-subtitle {
+    font-family: "Futura", "Arial Black", sans-serif;
+    font-size: 14px;
+    font-weight: 900; /* Ultra-bold / Black */
+    color: #0000bc; /* Azul eléctrico de alta saturación */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: -2px; /* Corrección de interletrado vertical */
+}
+
 .header-gotico {
   font-family: var(--font-gothic);
   font-size: 42px;
